@@ -61,7 +61,7 @@ i wykonana technologią **druku 3D**.
 ## Elektronika i zasilanie
 
 - **Sterownik:** Arduino Uno (ATmega328P).
-- **Zasilanie:** zewnętrzny zasilacz laboratoryjny (regulowane napięcie/prąd dla serw).
+- **Zasilanie:** 6v 4A.
 - **Komunikacja:** UART przez USB do komputera.
 
 > **Uwaga dot. zasilania:** serwa, szczególnie pod obciążeniem, pobierają duże prądy
@@ -93,16 +93,16 @@ Komendy wysyłane są przez UART. Obsługiwane są dwa typy poleceń:
 
 **1. Sterowanie pojedynczym serwem (ID + kąt):**
 ```
-<ID serwa> <kąt>
+<ID serwa><kąt>
 ```
 Przykład — ustawienie serwa nr 2 na 90°:
 ```
-2 90
+02090
 ```
 
 **2. Sterowanie pozycją efektora (współrzędne):**
 ```
-<X> <Y> <Z>
+k <X><Y><Z>
 ```
 Program przelicza współrzędne na kąty serw przez kinematykę odwrotną.
 
