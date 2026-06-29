@@ -7,9 +7,6 @@ zewnętrznych) oraz autorską aplikacją desktopową do sterowania przez UART.
 Cała konstrukcja mechaniczna została zaprojektowana od podstaw w **Autodesk Fusion**
 i wykonana technologią **druku 3D**.
 
-<!-- Wstaw tutaj główne zdjęcie ramienia -->
-<!-- ![Ramię robotyczne](docs/img/arm_main.jpg) -->
-
 ---
 
 ## Spis treści
@@ -53,9 +50,6 @@ i wykonana technologią **druku 3D**.
 - Mocny serwomechanizm (25 kg·cm) w bazie przenosi największe obciążenie —
   moment od całej masy ramienia, pozostałe stawy napędzane serwami MG996R.
 
-<!-- Wstaw zdjęcie modelu z Fusion oraz wydrukowanych części -->
-<!-- ![Model CAD](docs/img/fusion_model.jpg) -->
-
 ---
 
 ## Elektronika i zasilanie
@@ -66,9 +60,7 @@ i wykonana technologią **druku 3D**.
 
 > **Uwaga dot. zasilania:** serwa, szczególnie pod obciążeniem, pobierają duże prądy
 > chwilowe — dlatego użyto osobnego zasilacza laboratoryjnego zamiast zasilania z USB
-> Arduino. Masy (GND) zasilacza i Arduino muszą być wspólne.
-
-<!-- Wstaw schemat połączeń / zdjęcie elektroniki -->
+> Arduino.
 
 ---
 
@@ -82,8 +74,6 @@ ATmega328P**, bez gotowych bibliotek:
 - kąty stawów ramienia liczone w pionowej płaszczyźnie roboczej z użyciem
   **prawa cosinusów** oraz zależności trygonometrycznych,
 - wynikowe kąty przeliczane na sygnał PWM sterujący serwami.
-
-<!-- Opcjonalnie: wstaw rysunek/szkic geometrii ramienia z oznaczeniami kątów -->
 
 ---
 
@@ -115,9 +105,6 @@ Program przelicza współrzędne na kąty serw przez kinematykę odwrotną.
 Autorska aplikacja desktopowa do sterowania ramieniem przez port szeregowy —
 wybór portu COM, wysyłanie komend (tryb bezpośredni i kartezjański).
 
-<!-- DO UZUPEŁNIENIA — dołączę kod aplikacji i szczegóły (język, biblioteki, GUI) -->
-<!-- ![Aplikacja](docs/img/app_screenshot.jpg) -->
-
 ---
 
 ## Uruchomienie
@@ -142,8 +129,7 @@ wybór portu COM, wysyłanie komend (tryb bezpośredni i kartezjański).
 
 ## Galeria
 
-<!-- Wstaw tutaj zdjęcia i ewentualnie wideo z działania ramienia -->
-<!-- ![Ramię w ruchu](docs/img/arm_action.jpg) -->
+todo
 
 ---
 
@@ -158,5 +144,4 @@ wybór portu COM, wysyłanie komend (tryb bezpośredni i kartezjański).
 
 ## Licencja
 
-<!-- Wybierz licencję, np. MIT — mogę dodać plik LICENSE jeśli chcesz -->
-Projekt udostępniony na licencji MIT (do uzupełnienia).
+Projekt udostępniony na licencji MIT.
