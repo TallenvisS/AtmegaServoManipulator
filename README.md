@@ -95,9 +95,6 @@ Przykład — ustawienie serwa nr 2 na 90°:
 k <X><Y><Z>
 ```
 Program przelicza współrzędne na kąty serw przez kinematykę odwrotną.
-
-> Format komend uzupełnię/doprecyzuję zgodnie z finalną implementacją.
-
 ---
 
 ## Aplikacja sterująca
