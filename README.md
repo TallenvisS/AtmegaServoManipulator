@@ -54,7 +54,8 @@ i wykonana technologią **druku 3D**.
 
 ## Elektronika i zasilanie
 
-- **Sterownik:** Arduino Uno (ATmega328P).
+- **Mikrokontroler:** Arduino Uno (ATmega328P).
+- **Sterownik:** PCA9685.
 - **Zasilanie:** 6v 4A.
 - **Komunikacja:** UART przez USB do komputera.
 
