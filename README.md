@@ -70,7 +70,6 @@ i wykonana technologią **druku 3D**.
 
 > **Uwaga dot. zasilania:** serwa, szczególnie pod obciążeniem, pobierają duże prądy
 > chwilowe — dlatego zasilane są z osobnego źródła 6 V / 4 A, a nie z portu USB Arduino.
-> Masa (GND) zasilacza i Arduino musi być wspólna.
 
 ---
 
@@ -100,9 +99,9 @@ IIKKK
 ```
 Przykład — ustawienie serwa nr 2 na 90°:
 ```
-02090
+01090
 ```
-
+> **Uwaga dot. ID:** serwa są numerowane od ID 0.
 **2. Sterowanie pozycją efektora (współrzędne):**
 ```
 k x,y,z
