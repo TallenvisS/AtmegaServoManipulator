@@ -102,6 +102,7 @@ Przykład — ustawienie serwa nr 2 na 90°:
 01090
 ```
 > **Uwaga dot. ID:** serwa są numerowane od ID 0.
+
 **2. Sterowanie pozycją efektora (współrzędne):**
 ```
 k x,y,z
