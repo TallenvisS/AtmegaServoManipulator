@@ -51,7 +51,7 @@ void moveToPos(double x, double y, double z_floor) {
   
   const double L1 = 11.0;
   const double L2 = 13.0;
-  const double offsetZ = 10.5;
+  const double offsetZ = 10.5;  // wsokość na jakiej znajduje sie pierwsze serwo ramienia
 
   double z = z_floor - offsetZ;
   double l = sqrt(x * x + y * y);
@@ -60,7 +60,6 @@ void moveToPos(double x, double y, double z_floor) {
   if (h > (L1 + L2)) h = L1 + L2;
   if (h < abs(L1 - L2)) h = abs(L1 - L2);
 
-  // Obliczanie kątów
   double b = atan2(y, x) * (180.0 / PI);
   double a0 = 90.0 + b;
   
@@ -72,16 +71,16 @@ void moveToPos(double x, double y, double z_floor) {
   double cos_beta = (L1 * L1 + L2 * L2 - h * h) / (2.0 * L1 * L2);
   double beta = acos(constrain(cos_beta, -1.0, 1.0)) * (180.0 / PI);
   double a2 = constrain(180.0 - beta, 0, 180);
-  double orientacja_nadgarstka = 90.0; // Twoje "zero" nadgarstka (poziom)
+  double orientacja_nadgarstka = 90.0;
   double a3 = orientacja_nadgarstka - a1 + a2;
   Serial.println(a3);
   a3 = constrain(a3, 0, 180);
-  // Ustawienie celów
+
   prepareMove(0, 180 - (int)a0);
   prepareMove(1, (int)a1);
   prepareMove(2, (int)a2);
   prepareMove(3, (int)a3);
-  startNewMove(800); // Ruch IK potrwa 0.8 sekundy
+  startNewMove(800);
 }
 
 // ===== ZARZĄDZANIE RUCHEM SYNCHRONICZNYM =====
@@ -163,17 +162,15 @@ void handleSerial() {
   else if (cmd.startsWith("off")) {
     int id = cmd.substring(4).toInt(); // Pobiera numer serwa po spacji
     if (id < SERVO_COUNT) {
-      moving = false; // Zatrzymujemy ewentualny ruch płynny
-      pwm.setPWM(id, 0, 4096); // Specjalna wartość w PCA9685, która wyłącza sygnał całkowicie
+      moving = false;
+      pwm.setPWM(id, 0, 4096); 
       Serial.print(F("Servo ")); Serial.print(id); Serial.println(F(" wylaczone (brak trzymania)"));
     }
   }
   else if (cmd.startsWith("o")) { 
-    // 1. Zsynchronizuj cele z obecną pozycją, aby ramię stało w miejscu
     for(int i=0; i<SERVO_COUNT; i++) {
         targetPos[i] = currentPos[i]; 
     }
-    // 2. Ustaw nowy cel TYLKO dla chwytaka
     targetPos[4] = angleToPWM(4, 180); 
     
     startNewMove(400); 
