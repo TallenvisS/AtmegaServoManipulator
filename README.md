@@ -36,9 +36,7 @@ i wykonana technologią **druku 3D**.
 - Płynny ruch synchroniczny — interpolacja pozycji serw tak, by ruch zakończył się jednocześnie.
 - Sterowanie chwytakiem (otwieranie / zamykanie).
 - Presety pozycji zapisywane w EEPROM (zachowywane po odłączeniu zasilania).
-- Tryb sekwencji — odtwarzanie zapisanych pozycji po kolei, z opcją pętli.
 - Komunikacja z komputerem przez UART (USB).
-- Autorska aplikacja desktopowa do wygodnego wysyłania komend.
 - Konstrukcja własna — projekt 3D w Fusion, wydruk na drukarce 3D.
 
 ---
